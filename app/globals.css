@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-sage: var(--sage);
+  --font-sans: 'Geist', 'Arial', sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --radius-sm: .18rem;
+  --radius-md: .35rem;
+  --radius-lg: .5rem;
+}
+
+:root {
+  color-scheme: light;
+  --background: #f7f4ee;
+  --foreground: #242424;
+  --card: #fffdf9;
+  --card-foreground: #242424;
+  --popover: #fffdf9;
+  --popover-foreground: #242424;
+  --primary: #102a43;
+  --primary-foreground: #f7f4ee;
+  --secondary: #eeeae2;
+  --secondary-foreground: #242424;
+  --muted: #eeeae2;
+  --muted-foreground: #66717a;
+  --accent: #b7793b;
+  --accent-foreground: #102a43;
+  --brand: #b7793b;
+  --sage: #4f6654;
+  --border: #d9d3c9;
+  --input: #d9d3c9;
+  --ring: #b7793b;
+}
+
+* { @apply border-border; }
+html { font-size: 17px; scroll-behavior: smooth; background: var(--background); }
+body { @apply bg-background text-foreground font-sans; }
+
+.eyebrow { @apply text-xs font-bold uppercase tracking-[0.2em] text-brand; }
+.section-title { @apply font-serif text-4xl leading-[1.08] tracking-tight text-primary sm:text-5xl; }
+.section-title span { @apply text-brand; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-in { animation-fill-mode: both; }
+}
+
+::selection { background: var(--brand); color: var(--primary); }
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 9px; }
