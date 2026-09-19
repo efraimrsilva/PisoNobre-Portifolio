@@ -161,12 +161,12 @@ export default function Page() {
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-primary-foreground/80 lg:flex">
-            {["Serviços", "Antes e depois", "Processo", "Dúvidas"].map(
+            {["Serviços", "Antes e depois", "Processo", "Por que a Piso Nobre", "Dúvidas"].map(
               (item, index) => (
                 <a
                   key={item}
                   href={
-                    ["#servicos", "#resultados", "#processo", "#faq"][index]
+                    ["#servicos", "#resultados", "#processo", "#por-que-escolher", "#faq"][index]
                   }
                   className="transition-colors hover:text-brand"
                 >
@@ -193,13 +193,13 @@ export default function Page() {
         </div>
         {menuOpen && (
           <nav className="flex flex-col gap-5 border-t border-white/10 bg-primary px-5 py-5 text-sm lg:hidden">
-            {["Serviços", "Antes e depois", "Processo", "Dúvidas"].map(
+            {["Serviços", "Antes e depois", "Processo", "Por que a Piso Nobre", "Dúvidas"].map(
               (item, index) => (
                 <a
                   key={item}
                   onClick={() => setMenuOpen(false)}
                   href={
-                    ["#servicos", "#resultados", "#processo", "#faq"][index]
+                    ["#servicos", "#resultados", "#processo", "#por-que-escolher", "#faq"][index]
                   }
                 >
                   {item}
@@ -495,7 +495,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-background py-24 lg:py-32">
+      <section id="por-que-escolher" className="bg-background py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>
@@ -570,6 +570,8 @@ export default function Page() {
               <div key={question}>
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  aria-expanded={openFaq === index}
+                  aria-controls={`faq-answer-${index}`}
                   className="flex w-full items-center justify-between gap-6 py-6 text-left font-serif text-lg text-primary"
                 >
                   <span>{question}</span>
@@ -578,11 +580,23 @@ export default function Page() {
                     className={`shrink-0 text-brand transition-transform ${openFaq === index ? "rotate-180" : ""}`}
                   />
                 </button>
-                {openFaq === index && (
-                  <p className="max-w-2xl pb-6 pr-8 text-sm leading-6 text-muted-foreground">
-                    {answer}
-                  </p>
-                )}
+                <div
+                  aria-hidden={openFaq !== index}
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+                    openFaq === index
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p
+                      id={`faq-answer-${index}`}
+                      className="max-w-2xl pb-6 pr-8 text-sm leading-6 text-muted-foreground"
+                    >
+                      {answer}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -659,6 +673,12 @@ export default function Page() {
               </a>
               <a className="block hover:text-brand" href="#resultados">
                 Antes e depois
+              </a>
+              <a className="block hover:text-brand" href="#processo">
+                Processo
+              </a>
+              <a className="block hover:text-brand" href="#por-que-escolher">
+                Por que a Piso Nobre
               </a>
               <a className="block hover:text-brand" href="#faq">
                 Dúvidas frequentes
