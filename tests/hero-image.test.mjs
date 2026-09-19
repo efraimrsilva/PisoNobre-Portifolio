@@ -56,3 +56,4 @@ assert.match(pageSource, /thumbnailRail\.scrollTo\(\{[\s\S]*?left:/, 'the galler
 assert.match(pageSource, /activeGalleryImage === 0\s*\? 0\s*:/, 'the thumbnail rail must return to its first item after the last photo')
 assert.match(pageSource, /<header className="fixed inset-x-0 top-0 z-50/, 'the header must float above every section while the page scrolls')
 assert.match(pageSource, /bg-primary\/95[^"]*backdrop-blur-sm/, 'the floating header must retain a readable translucent background')
+assert.match(pageSource, /fixed bottom-24 right-5 z-50 flex items-center gap-3/, 'the floating social actions must clear the Netlify badge')

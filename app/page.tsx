@@ -692,7 +692,7 @@ export default function Page() {
           . Todos os direitos reservados.
         </div>
       </footer>
-      <div className="fixed bottom-5 right-5 z-50 flex items-center gap-3">
+      <div className="fixed bottom-24 right-5 z-50 flex items-center gap-3">
         <a
           href={instagramLink}
           target="_blank"
