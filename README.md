@@ -8,7 +8,7 @@ O projeto foi pensado para transmitir confiança, destacar mais de 20 anos de ex
 
 ## 📷 Preview
 
-Veja a versão publicada em [raspagemaplicacaosintecowc.netlify.app](https://raspagemaplicacaosintecowc.netlify.app).
+Veja a versão publicada em [sintecowc.netlify.app](https://sintecowc.netlify.app).
 
 Para desenvolvimento local, execute o projeto e acesse [http://localhost:3000](http://localhost:3000).
 
@@ -40,18 +40,18 @@ Para desenvolvimento local, execute o projeto e acesse [http://localhost:3000](h
 
 ## 🔎 SEO e indexação
 
-- URL canônica configurada para [raspagemaplicacaosintecowc.netlify.app](https://raspagemaplicacaosintecowc.netlify.app)
+- URL canônica configurada para [sintecowc.netlify.app](https://sintecowc.netlify.app)
 - Metadados completos para mecanismos de busca, Open Graph e Twitter Card
 - Imagem de compartilhamento em `/opengraph-image`
 - Dados estruturados `ProfessionalService` com serviços, contato e área de atendimento
-- Arquivos gerados pelo Next.js: [robots.txt](https://raspagemaplicacaosintecowc.netlify.app/robots.txt) e [sitemap.xml](https://raspagemaplicacaosintecowc.netlify.app/sitemap.xml)
+- Arquivos gerados pelo Next.js: [robots.txt](https://sintecowc.netlify.app/robots.txt) e [sitemap.xml](https://sintecowc.netlify.app/sitemap.xml)
 
 ### Google Search Console
 
 A propriedade é verificada pelo método de arquivo HTML, mantido em `public/googlea3f2b8378fe5a305.html`. Após a verificação, envie o sitemap abaixo no Search Console:
 
 ```text
-https://raspagemaplicacaosintecowc.netlify.app/sitemap.xml
+https://sintecowc.netlify.app/sitemap.xml
 ```
 
 > Não remova o arquivo de verificação enquanto a propriedade continuar vinculada ao Google Search Console.

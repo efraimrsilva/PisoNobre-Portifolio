@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import logo from "@/assets/image/logo.png";
 import "./globals.css";
 
-const siteUrl = "https://raspagemaplicacaosintecowc.netlify.app";
+const siteUrl = "https://sintecowc.netlify.app";
 const siteName = "Raspagem e Aplicação de Sinteco WC";
 const siteDescription =
   "Especialistas em restauração de pisos de madeira, raspagem de taco, aplicação de sinteco e acabamento profissional em Belo Horizonte e Minas Gerais.";

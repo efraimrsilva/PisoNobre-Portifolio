@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://raspagemaplicacaosintecowc.netlify.app";
+const siteUrl = "https://sintecowc.netlify.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

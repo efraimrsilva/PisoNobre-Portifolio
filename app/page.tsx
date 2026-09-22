@@ -70,8 +70,8 @@ const localBusinessSchema = {
   name: "Raspagem e Aplicação de Sinteco WC",
   description:
     "Restauração de pisos de madeira, raspagem de tacos e assoalhos, aplicação de sinteco e calafetação em Minas Gerais.",
-  url: "https://raspagemaplicacaosintecowc.netlify.app",
-  image: "https://raspagemaplicacaosintecowc.netlify.app/opengraph-image",
+  url: "https://sintecowc.netlify.app",
+  image: "https://sintecowc.netlify.app/opengraph-image",
   telephone: "+5531984761292",
   priceRange: "$$",
   areaServed: {
