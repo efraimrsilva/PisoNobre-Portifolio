@@ -2,12 +2,53 @@ import type { Metadata, Viewport } from "next";
 import logo from "@/assets/image/logo.png";
 import "./globals.css";
 
+const siteUrl = "https://raspagemaplicacaosintecowc.netlify.app";
+const siteName = "Raspagem e Aplicação de Sinteco WC";
+const siteDescription =
+  "Especialistas em restauração de pisos de madeira, raspagem de taco, aplicação de sinteco e acabamento profissional em Belo Horizonte e Minas Gerais.";
+
 export const metadata: Metadata = {
-  title:
-    "Piso Nobre | Raspagem, Restauro e Aplicação de Sinteco em Minas Gerais",
-  description:
-    "Especialista em raspagem de piso de madeira, restauração de taco, aplicação de sinteco e acabamento premium em Belo Horizonte e em toda Minas Gerais. Atendemos residências, imóveis e reformas com qualidade profissional e resultado impecável.",
+  metadataBase: new URL(siteUrl),
+  title: `${siteName} | Restauração de Pisos de Madeira em Minas Gerais`,
+  description: siteDescription,
+  applicationName: siteName,
+  alternates: {
+    canonical: "/",
+  },
   icons: { icon: logo.src },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName,
+    title: `${siteName} | Restauração de Pisos de Madeira`,
+    description: siteDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Raspagem e Aplicação de Sinteco WC",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} | Restauração de Pisos de Madeira`,
+    description: siteDescription,
+    images: ["/opengraph-image"],
+  },
   keywords: [
     "raspagem de taco",
     "raspagem de piso de madeira",
@@ -18,7 +59,7 @@ export const metadata: Metadata = {
     "reforma de piso",
     "acabamento de piso",
     "serviço de piso madeira",
-    "piso nobre",
+    "Raspagem e Aplicação de Sinteco WC",
     "Belo Horizonte",
     "Minas Gerais",
     "Contagem",
@@ -54,6 +95,7 @@ export const metadata: Metadata = {
     "piso madeira BH",
     "sinteco bh",
   ],
+  category: "home improvement",
 };
 
 export const viewport: Viewport = {

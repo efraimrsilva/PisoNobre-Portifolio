@@ -41,7 +41,6 @@ const whatsappLink =
 const instagramLink =
   "https://www.instagram.com/vanderli.c.scalafetador?stkn=MTlpeGxqMndyN2Nr";
 const currentYear = dayjs().year();
-
 const services = [
   {
     icon: Sparkles,
@@ -64,6 +63,41 @@ const services = [
     text: "Vedamos e preenchemos frestas, juntas, rachaduras e vãos para evitar água, ar, poeira e insetos.",
   },
 ];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Raspagem e Aplicação de Sinteco WC",
+  description:
+    "Restauração de pisos de madeira, raspagem de tacos e assoalhos, aplicação de sinteco e calafetação em Minas Gerais.",
+  url: "https://raspagemaplicacaosintecowc.netlify.app",
+  image: "https://raspagemaplicacaosintecowc.netlify.app/opengraph-image",
+  telephone: "+5531984761292",
+  priceRange: "$$",
+  areaServed: {
+    "@type": "State",
+    name: "Minas Gerais",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+5531984761292",
+    contactType: "customer service",
+    availableLanguage: "pt-BR",
+  },
+  sameAs: [instagramLink],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Serviços de restauração de pisos de madeira",
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.text,
+      },
+    })),
+  },
+};
 
 const gallery = [
   { videoId: "DNtrF4q8Vhw" },
@@ -141,39 +175,53 @@ export default function Page() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-primary/95 text-primary-foreground backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a
             href="#inicio"
             className="flex items-center gap-3"
-            aria-label="Piso Nobre início"
+            aria-label="Raspagem e Aplicação de Sinteco WC início"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-brand text-lg font-bold text-primary">
-              PN
+              WC
             </span>
             <span className="leading-none">
-              <strong className="block font-serif text-xl tracking-tight">
-                Piso Nobre
+              <strong className="block max-w-56 font-serif text-base leading-5 tracking-tight sm:text-lg">
+                Raspagem e Aplicação de Sinteco WC
               </strong>
-              <small className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/65">
-                Restauração de madeira
+              <small className="text-[11px] uppercase tracking-[0.12em] text-primary-foreground/65">
+                Restauração de Pisos de Madeira
               </small>
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-primary-foreground/80 lg:flex">
-            {["Serviços", "Antes e depois", "Processo", "Por que a Piso Nobre", "Dúvidas"].map(
-              (item, index) => (
-                <a
-                  key={item}
-                  href={
-                    ["#servicos", "#resultados", "#processo", "#por-que-escolher", "#faq"][index]
-                  }
-                  className="transition-colors hover:text-brand"
-                >
-                  {item}
-                </a>
-              ),
-            )}
+            {[
+              "Serviços",
+              "Antes e depois",
+              "Processo",
+              "Por que nos escolher",
+              "Dúvidas",
+            ].map((item, index) => (
+              <a
+                key={item}
+                href={
+                  [
+                    "#servicos",
+                    "#resultados",
+                    "#processo",
+                    "#por-que-escolher",
+                    "#faq",
+                  ][index]
+                }
+                className="transition-colors hover:text-brand"
+              >
+                {item}
+              </a>
+            ))}
           </nav>
           <a
             href={whatsappLink}
@@ -193,19 +241,29 @@ export default function Page() {
         </div>
         {menuOpen && (
           <nav className="flex flex-col gap-5 border-t border-white/10 bg-primary px-5 py-5 text-sm lg:hidden">
-            {["Serviços", "Antes e depois", "Processo", "Por que a Piso Nobre", "Dúvidas"].map(
-              (item, index) => (
-                <a
-                  key={item}
-                  onClick={() => setMenuOpen(false)}
-                  href={
-                    ["#servicos", "#resultados", "#processo", "#por-que-escolher", "#faq"][index]
-                  }
-                >
-                  {item}
-                </a>
-              ),
-            )}
+            {[
+              "Serviços",
+              "Antes e depois",
+              "Processo",
+              "Por que nos escolher",
+              "Dúvidas",
+            ].map((item, index) => (
+              <a
+                key={item}
+                onClick={() => setMenuOpen(false)}
+                href={
+                  [
+                    "#servicos",
+                    "#resultados",
+                    "#processo",
+                    "#por-que-escolher",
+                    "#faq",
+                  ][index]
+                }
+              >
+                {item}
+              </a>
+            ))}
             <a href={whatsappLink} className="font-bold text-brand">
               Falar no WhatsApp
             </a>
@@ -241,7 +299,7 @@ export default function Page() {
             </h1>
             <p className="mt-7 max-w-lg text-base leading-7 text-primary-foreground/75 sm:text-lg">
               Raspagem e aplicação de sinteco com acabamento profissional para
-              devolver vida, proteção e valor à sua madeira.
+              devolver vida, proteção e valor ao seu piso de madeira.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -398,7 +456,7 @@ export default function Page() {
                 Foto {activeGalleryImage + 1} de {photoGallery.length}
               </p>
             </div>
-            <div className="relative mx-auto mt-8 aspect-[9/10] max-w-3xl overflow-hidden rounded-sm bg-primary/95 shadow-2xl shadow-primary/15">
+            <div className="relative mx-auto mt-8 aspect-[10/11] max-w-3xl overflow-hidden rounded-sm bg-primary/95 shadow-2xl shadow-primary/15">
               <div
                 key={photoGallery[activeGalleryImage].src}
                 className="absolute inset-0 animate-in fade-in duration-500 ease-in-out transition-opacity"
@@ -499,7 +557,7 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>
-              <p className="eyebrow">Por que escolher a Piso Nobre</p>
+              <p className="eyebrow">Por que nos escolher</p>
               <h2 className="section-title mt-4">
                 Experiência que
                 <br />
@@ -632,13 +690,15 @@ export default function Page() {
           <div>
             <div className="flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand text-sm font-bold text-primary">
-                PN
+                WC
               </span>
-              <strong className="font-serif text-xl">Piso Nobre</strong>
+              <strong className="font-serif text-base leading-5 sm:text-lg">
+                Raspagem e Aplicação de Sinteco WC
+              </strong>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/55">
-              Restauração premium de pisos de madeira. Beleza, cuidado e
-              acabamento que permanece.
+              Restauração de Pisos de Madeira. Beleza, cuidado e acabamento que
+              permanece.
             </p>
           </div>
           <div>
@@ -678,7 +738,7 @@ export default function Page() {
                 Processo
               </a>
               <a className="block hover:text-brand" href="#por-que-escolher">
-                Por que a Piso Nobre
+                Por que nos escolher
               </a>
               <a className="block hover:text-brand" href="#faq">
                 Dúvidas frequentes
@@ -695,8 +755,8 @@ export default function Page() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-5 pt-6 text-center text-sm text-white lg:px-8">
-          © {currentYear} Piso Nobre - Restauração premium de pisos de madeira.
-          Feito com{" "}
+          © {currentYear} Raspagem e Aplicação de Sinteco WC - Restauração de
+          Pisos de Madeira. Feito com{" "}
           <span role="img" aria-label="amor">
             💖
           </span>{" "}
@@ -717,7 +777,7 @@ export default function Page() {
           href={instagramLink}
           target="_blank"
           rel="noreferrer"
-          aria-label="Abrir o Instagram de Vanderli, responsável pela Piso Nobre"
+          aria-label="Abrir o Instagram de Vanderli, responsável pela Raspagem e Aplicação de Sinteco WC"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#515BD4] text-white shadow-xl shadow-primary/25 transition-transform hover:scale-110"
         >
           <FaInstagram size={27} />
@@ -726,7 +786,7 @@ export default function Page() {
           href={whatsappLink}
           target="_blank"
           rel="noreferrer"
-          aria-label="Enviar um áudio para a Piso Nobre pelo WhatsApp"
+          aria-label="Enviar um áudio para Raspagem e Aplicação de Sinteco WC pelo WhatsApp"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-primary/25 transition-transform hover:scale-110"
         >
           <FaWhatsapp size={27} />

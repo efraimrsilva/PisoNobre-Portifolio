@@ -1,8 +1,8 @@
-# 🪵 Piso Nobre – Restauração Premium de Pisos de Madeira
+# 🪵 Raspagem e Aplicação de Sinteco WC – Restauração de Pisos de Madeira
 
 ## 📖 Sobre o Projeto
 
-O **Piso Nobre** é um site institucional para apresentação de serviços profissionais de raspagem, revitalização, calafetação e aplicação de sinteco em pisos de madeira.
+O **Raspagem e Aplicação de Sinteco WC** é um site institucional para apresentação de serviços profissionais de raspagem, revitalização, calafetação e aplicação de sinteco em pisos de madeira.
 
 O projeto foi pensado para transmitir confiança, destacar mais de 20 anos de experiência e facilitar o contato de clientes residenciais e comerciais pelo WhatsApp. A experiência reúne vídeos de resultados, uma galeria interativa e informações claras sobre o processo de restauração.
 
@@ -82,13 +82,13 @@ Execute o projeto localmente e acesse [http://localhost:3000](http://localhost:3
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/efraimrsilva/PisoNobre-Portifolio.git
+   git clone https://github.com/efraimrsilva/Sinteco-Portifolio.git
    ```
 
 2. Acesse a pasta do projeto:
 
    ```bash
-   cd PisoNobre-Portifolio
+   cd Sinteco-Portifolio
    ```
 
 3. Instale as dependências:
@@ -121,7 +121,7 @@ npm run start
 
 ## 👷 Atendimento
 
-**Piso Nobre** – Aplicação e raspagem de sinteco, restauração de tacos e assoalhos.
+**Raspagem e Aplicação de Sinteco WC** – Restauração de pisos de madeira, aplicação e raspagem de sinteco, restauração de tacos e assoalhos.
 
 - WhatsApp: [(31) 98476-1292](https://wa.me/5531984761292)
 - Instagram: [@vanderli.c.scalafetador](https://www.instagram.com/vanderli.c.scalafetador/)
