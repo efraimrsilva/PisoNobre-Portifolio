@@ -9,6 +9,7 @@ const layoutSource = readFileSync(resolve(projectRoot, 'app/layout.tsx'), 'utf8'
 const readmeSource = readFileSync(resolve(projectRoot, 'README.md'), 'utf8')
 const robotsPath = resolve(projectRoot, 'app/robots.ts')
 const sitemapPath = resolve(projectRoot, 'app/sitemap.ts')
+const googleVerificationPath = resolve(projectRoot, 'public/googlea3f2b8378fe5a305.html')
 
 assert.ok(existsSync(resolve(projectRoot, 'assets/image/hero.jpg')), 'the local hero asset must exist')
 assert.match(pageSource, /import heroImage from ['"]@\/assets\/image\/hero\.jpg['"]/, 'the page must import the local hero asset')
@@ -98,3 +99,9 @@ assert.match(pageSource, /areaServed/, 'structured data must specify the service
 assert.match(robotsSource, /sitemap\.xml/, 'robots must advertise a sitemap URL')
 assert.match(robotsSource, new RegExp(productionUrl), 'robots must use the production domain')
 assert.match(sitemapSource, new RegExp(productionUrl), 'sitemap entries must use the production domain')
+assert.ok(existsSync(googleVerificationPath), 'the Google Search Console verification file must be publicly available')
+assert.equal(
+  readFileSync(googleVerificationPath, 'utf8').trim(),
+  'google-site-verification: googlea3f2b8378fe5a305.html',
+  'the Google verification file must retain its exact supplied content',
+)
