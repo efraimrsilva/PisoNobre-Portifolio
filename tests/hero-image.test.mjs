@@ -105,3 +105,7 @@ assert.equal(
   'google-site-verification: googlea3f2b8378fe5a305.html',
   'the Google verification file must retain its exact supplied content',
 )
+assert.match(readmeSource, /https:\/\/raspagemaplicacaosintecowc\.netlify\.app/, 'the README must link to the published site')
+assert.match(readmeSource, /## 🔎 SEO e indexação/, 'the README must document its SEO setup')
+assert.match(readmeSource, /Google Search Console/, 'the README must document Google Search Console verification')
+assert.match(readmeSource, /https:\/\/raspagemaplicacaosintecowc\.netlify\.app\/sitemap\.xml/, 'the README must document the sitemap submission URL')
